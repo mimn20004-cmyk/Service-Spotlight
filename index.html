@@ -3,32 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Spotlight</title>
+    <title>Luxury Spa Popup</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<button id="openBtn">Show Offer</button>
+    <!-- Background -->
+    <main class="hero">
 
-<div class="overlay hidden" id="overlay">
-    <div class="modal" id="modal">
+        <div class="hero-content">
 
-        <span class="close" id="closeBtn">&times;</span>
+    <button class="open-modal-btn">
+        🌿 View Spa Offer
+    </button>
 
-        <h2>Luxury Spa Treatment</h2>
-
-        <p>
-            Relax and recharge with our premium spa package.
-            Enjoy a special discount for a limited time.
-        </p>
-
-        <button class="book-btn">
-            Book Now
-        </button>
-
-    </div>
 </div>
 
-<script src="script.js"></script>
+    </main>
+
+    <!-- Overlay -->
+    <div class="overlay hidden"></div>
+
+    <!-- Modal -->
+    <div class="modal hidden">
+
+        <!-- Top Accent -->
+        <div class="modal-top-line"></div>
+
+        <!-- Close -->
+        <button class="close-btn" aria-label="Close">
+            &times;
+        </button>
+
+        <!-- Content -->
+
+        <div class="modal-content">
+
+            <div class="icon-circle">
+                🌿
+            </div>
+
+            <span class="offer-tag">
+                LIMITED OFFER
+            </span>
+
+            <h2>
+                Luxury Aromatherapy Massage
+            </h2>
+
+            <p class="description">
+                Escape the stress of everyday life and enjoy a premium
+                spa experience with professional therapists in a peaceful
+                atmosphere.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    ✅ 60 Minute Session
+                </div>
+
+                <div class="feature">
+                    ✅ Certified Specialists
+                </div>
+
+                <div class="feature">
+                    ✅ 20% Limited-Time Discount
+                </div>
+
+            </div>
+
+            <button class="book-btn">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
