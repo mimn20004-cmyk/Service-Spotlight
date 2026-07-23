@@ -1,129 +1,479 @@
+/* ===========================
+   Google Style Variables
+=========================== */
+
+:root {
+    --primary: #d4af37;
+    --primary-dark: #b99321;
+
+    --white: #ffffff;
+    --black: #111827;
+
+    --text: #374151;
+    --gray: #6b7280;
+
+    --overlay: rgba(15, 23, 42, 0.6);
+
+    --radius: 22px;
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, .18);
+
+    --transition: .35s ease;
+}
+
+/* ===========================
+   Reset
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
 }
 
 body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#f4f4f4;
+    font-family:"Poppins",sans-serif;
+    background:#eef2f7;
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
-#openBtn{
-    padding:14px 30px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    background:#6C63FF;
-    color:white;
-    font-size:18px;
-}
+/* ===========================
+   Hero
+=========================== */
 
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.6);
+.hero{
+
+    min-height:100vh;
 
     display:flex;
     justify-content:center;
     align-items:center;
-
-    transition:.3s;
-}
-
-.hidden{
-    opacity:0;
-    visibility:hidden;
-}
-
-.modal{
-
-    width:420px;
-    max-width:90%;
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:15px;
 
     text-align:center;
 
-    position:relative;
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #334155
+    );
 
-    animation:popup .4s ease;
+    color:white;
+
+    padding:30px;
 }
 
-@keyframes popup{
+.hero-content{
 
-    from{
-        transform:scale(.7);
-        opacity:0;
-    }
-
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
+    max-width:700px;
 
 }
 
-.close{
+.tag{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    margin-bottom:25px;
+
+    font-size:.9rem;
+
+}
+
+.hero h1{
+
+    font-size:clamp(2.5rem,6vw,4.5rem);
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:600px;
+
+    margin:auto;
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    color:#d7dde6;
+
+}
+
+/* ===========================
+   Overlay
+=========================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:var(--overlay);
+
+    backdrop-filter:blur(8px);
+
+    opacity:1;
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+/* ===========================
+   Modal
+=========================== */
+
+.modal{
+
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.88);
+
+    width:min(92%,500px);
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    opacity:1;
+
+    z-index:1000;
+
+}
+
+.modal.show{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+}
+
+/* ===========================
+   Accent Line
+=========================== */
+
+.modal-top-line{
+
+    height:6px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #f8d66d,
+        var(--primary),
+        #f8d66d
+    );
+
+}
+
+/* ===========================
+   Close Button
+=========================== */
+
+.close-btn{
 
     position:absolute;
 
-    right:15px;
+    top:18px;
+    right:18px;
 
-    top:10px;
+    width:38px;
+    height:38px;
 
-    font-size:28px;
+    border:none;
+
+    border-radius:50%;
+
+    background:#f3f4f6;
+
+    font-size:1.4rem;
 
     cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.close-btn:hover{
+
+    background:#111827;
+
+    color:white;
+
+    transform:rotate(90deg);
+
+}
+
+/* ===========================
+   Modal Content
+=========================== */
+
+.modal-content{
+
+    padding:42px 35px 35px;
+
+    text-align:center;
+
+}
+
+.icon-circle{
+
+    width:80px;
+    height:80px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:2rem;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff5d4,
+        #ffe9a5
+    );
+
+    margin-bottom:22px;
+
+}
+
+.offer-tag{
+
+    display:inline-block;
+
+    background:#fff7dc;
+
+    color:#9a6b00;
+
+    padding:7px 16px;
+
+    border-radius:30px;
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+    letter-spacing:.5px;
 
 }
 
 .modal h2{
 
+    font-size:2rem;
+
+    color:var(--black);
+
     margin-bottom:15px;
 
 }
 
-.modal p{
+.description{
 
-    color:#555;
+    line-height:1.8;
 
-    margin-bottom:25px;
+    color:var(--gray);
 
-    line-height:1.6;
+    margin-bottom:28px;
 
 }
 
+/* ===========================
+   Features
+=========================== */
+
+.features{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+.feature{
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    padding:13px 18px;
+
+    text-align:left;
+
+    transition:var(--transition);
+
+}
+
+.feature:hover{
+
+    transform:translateX(5px);
+
+    background:#eef5ff;
+
+}
+
+/* ===========================
+   Button
+=========================== */
+
 .book-btn{
 
-    background:#ff6b00;
-
-    color:white;
+    width:100%;
 
     border:none;
 
-    padding:14px 30px;
+    border-radius:14px;
 
-    border-radius:8px;
+    padding:16px;
+
+    font-size:1rem;
+
+    font-weight:600;
 
     cursor:pointer;
 
-    font-size:16px;
+    color:white;
 
-    transition:.3s;
+    background:
+    linear-gradient(
+        135deg,
+        #d4af37,
+        #f0ca57
+    );
+
+    transition:var(--transition);
 
 }
 
 .book-btn:hover{
 
-    background:#e45f00;
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(212,175,55,.35);
+
+}
+
+.book-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:600px){
+
+    .modal-content{
+
+        padding:35px 24px;
+
+    }
+
+    .modal h2{
+
+        font-size:1.55rem;
+
+    }
+
+    .description{
+
+        font-size:.95rem;
+
+    }
+
+    .feature{
+
+        font-size:.92rem;
+
+    }
+
+}
+
+.open-modal-btn{
+
+    border:none;
+
+    padding:18px 38px;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #d4af37,
+        #f0ca57
+    );
+
+    transition:.3s;
+
+    box-shadow:0 12px 30px rgba(212,175,55,.35);
+
+}
+
+.open-modal-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 40px rgba(212,175,55,.45);
 
 }
